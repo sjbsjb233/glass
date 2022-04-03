@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>下载GlassWallpaper</title>
     <style>
-        *{
-            border:0;
+        * {
+            border: 0;
         }
-        body{
+
+        body {
             background-color: #b2ceeb;
         }
-        .all{
+
+        .all {
             width: 400px;
             height: 300px;
-            
+
             border-radius: 50px;
             background: #b2ceeb;
-            box-shadow:  20px 20px 60px #97afc8, 
-             -20px -20px 60px #cdedff;
+            box-shadow: 20px 20px 60px #97afc8,
+                -20px -20px 60px #cdedff;
         }
-        .ac,.all{
+
+        .ac,
+        .all {
             position: absolute;
-            left:50%;
-            top:50%;
-            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
+
         /* .usr,.pwd{
             height: 40px;
             width: 278px;
@@ -45,106 +51,116 @@
 
             transition: all 0.2s;
         } */
-        input{
+        input {
             height: 40px;
             width: 278px;
 
             border-radius: 50px;
-            background: #b2ceeb!important;
-            box-shadow: inset 5px 5px 10px #97afc8, 
-            inset -5px -5px 10px #cdedff!important;
+            background: #b2ceeb !important;
+            box-shadow: inset 5px 5px 10px #97afc8,
+                inset -5px -5px 10px #cdedff !important;
 
             margin: 10px;
-            
 
 
-            color:#8b96a2!important;
+
+            color: #8b96a2 !important;
             font-size: 20px;
             text-align: center;
 
             transition: all 0.2s;
         }
 
-        .h-captcha{
+        .h-captcha {
             margin-top: 5px;
         }
+
         /* .usr:focus,.pwd:focus{
             border-radius: 50px;
             background: #b2ceeb;
             box-shadow: inset 7px 7px 31px #b0cce9, 
             inset -7px -7px 31px #b4d0ed;
         } */
-        input:focus{
+        input:focus {
             border-radius: 50px;
             background: #b2ceeb;
-            box-shadow: inset 7px 7px 31px #b0cce9, 
-            inset -7px -7px 31px #b4d0ed;
+            box-shadow: inset 7px 7px 31px #b0cce9,
+                inset -7px -7px 31px #b4d0ed;
         }
-        .bt{
+
+        .bt {
             border-radius: 50px;
             background: #b2ceeb;
-            box-shadow: inset 5px 5px 10px #97afc8, 
-            inset -5px -5px 10px #cdedff;
+            box-shadow: inset 5px 5px 10px #97afc8,
+                inset -5px -5px 10px #cdedff;
 
 
-             color:#8b96a2;
-             font-weight: lighter;
-             height: 40px;
-             width: 100px;
-             font-size: 16px;
-             transform: translate(100%,20%);   
-             
-             transition: all 0.2s;
+            color: #8b96a2;
+            font-weight: lighter;
+            height: 40px;
+            width: 100px;
+            font-size: 16px;
+            transform: translate(100%, 20%);
+
+            transition: all 0.2s;
         }
-        .bt:hover{
+
+        .bt:hover {
             border-radius: 50px;
             background: #b2ceeb;
-            box-shadow: inset 7px 7px 31px #b0cce9, 
-            inset -7px -7px 31px #b4d0ed;
+            box-shadow: inset 7px 7px 31px #b0cce9,
+                inset -7px -7px 31px #b4d0ed;
         }
-        .titles{
+
+        .titles {
             position: absolute;
-            left:50%;
-            top:10%;
-            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 10%;
+            transform: translate(-50%, -50%);
 
             font-weight: lighter;
             font-size: 40px;
-            color:#8b96a2;
+            color: #8b96a2;
         }
-        input::placeholder{
-            color:#afb2b6;
-            
+
+        input::placeholder {
+            color: #afb2b6;
+
         }
-        .biaoqian{
-            color:#7E8299;
+
+        .biaoqian {
+            color: #7E8299;
         }
-        .neirong{
-            color:#181C32;
-            font-weight:bold;
+
+        .neirong {
+            color: #181C32;
+            font-weight: bold;
         }
     </style>
 </head>
+
 <body>
     <h1 class="titles">下载Glass Wallpaper</h1>
 
     <div class="all">
         <form method="post" action="https://api.sjbsjb.xyz/test/download_new">
-           <div class="ac">
+            <div class="ac">
                 <!-- <input type="text" class="usr"> <br> -->
-                
+
                 <span class="biaoqian">下载Glass Wallpaper</span>
+                <span class="biaoqian">注意:下载完成后,请将后缀改为.exe</span>
                 <br>
                 <span class="biaoqian">请先完成人机验证</span>
                 <br>
                 <br>
-                
+
                 <div class="h-captcha" data-sitekey="7a7d4cb8-c91b-4388-a215-f80856131842"></div>
                 <script src="https://hcaptcha.com/1/api.js" async defer></script>
                 <button class="bt">下载</button>
                 <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
-           </div>
+            </div>
         </form>
     </div>
 </body>
+
 </html>
